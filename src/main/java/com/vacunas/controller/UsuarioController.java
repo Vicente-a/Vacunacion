@@ -141,6 +141,12 @@ public class UsuarioController implements Bean, Serializable {
 	public void procesarCliente() {
 		enviar("/forms/inicio.jsf");
 	}
+  	public void validarIdentificacion(String entrada) {
+		if(!UsuarioValidation.isIdentificacionValida(entrada)) {
+			usuario.setIdentificacion("");
+			Mensajes.mensajeAdvertencia("NUMERO DE IDENTIFICACION ERRONEO");
+		}
+	}
 
 
 }

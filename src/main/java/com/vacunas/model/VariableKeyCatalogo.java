@@ -1,5 +1,4 @@
 package com.vacunas.model;
-
 public class VariableKeyCatalogo {
 
 	private VariableKeyCatalogo(){

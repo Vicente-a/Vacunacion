@@ -7,8 +7,8 @@ import java.util.TimeZone;
 
 public enum ComunEnum {
     REGISTRO_ACTUALIZADO("Registro actualizado."),
-    ERROR_REGISTRO_ACTUALIZADO("Error al actualizar el registro, por favor intente nuevamente m\u00e1s tarde."),
-    ERROR_RECUPERAR_REGISTRO("Error al recuperar el registro, por favor intente nuevamente m\u00e1s tarde."),
+    ERROR_REGISTRO_ACTUALIZADO("Error al actualizar el registro, Intente nuevamente m\u00e1s tarde."),
+    ERROR_RECUPERAR_REGISTRO("Error al recuperar el registro, Intente nuevamente m\u00e1s tarde."),
     USUARIO_NO_EXISTENTE("Usuario no existe."),
     SELECCIONE("Seleccione"),
     USUARIO_EXISTENTE("Usuario ya existe."),

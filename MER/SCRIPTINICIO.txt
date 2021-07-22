@@ -1,0 +1,299 @@
+INSERT INTO vcnn.catalogo (descripcion,estado) VALUES
+	 ('PAIS',1),
+	 ('PROVINCIAS',1),
+	 ('CANTONES',1),
+	 ('SECTORES',1),
+	 ('VACUNAS',1);
+
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (1,'ECUADOR',NULL,NULL,1),
+	 (4,'NORTE',NULL,NULL,1),
+	 (4,'CENTRO',NULL,NULL,1),
+	 (4,'SUR',NULL,NULL,1),
+	 (2,'AZUAY',1,'0',1),
+	 (2,'BOLIVAR',1,'0',1),
+	 (2,'CAÑAR',1,'0',1),
+	 (2,'CARCHI',1,'0',1),
+	 (2,'COTOPAXI',1,'0',1),
+	 (2,'CHIMBORAZO',1,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (2,'EL ORO',1,'0',1),
+	 (2,'ESMERALDAS',1,'0',1),
+	 (2,'GUAYAS',1,'0',1),
+	 (2,'IMBABURA',1,'0',1),
+	 (2,'LOJA',1,'0',1),
+	 (2,'LOS RIOS',1,'0',1),
+	 (2,'MANABI',1,'0',1),
+	 (2,'MORONA SANTIAGO',1,'0',1),
+	 (2,'NAPO',1,'0',1),
+	 (2,'PASTAZA',1,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (2,'PICHINCHA',1,'0',1),
+	 (2,'TUNGURAHUA',1,'0',1),
+	 (2,'ZAMORA CHINCHIPE',1,'0',1),
+	 (2,'GALAPAGOS',1,'0',1),
+	 (2,'SUCUMBIOS',1,'0',1),
+	 (2,'ORELLANA',1,'0',1),
+	 (2,'SANTO DOMINGO DE LOS TSACHILAS',1,'0',1),
+	 (2,'SANTA ELENA',1,'0',1),
+	 (2,'ZONA NO DELIMITADA',1,'0',1),
+	 (3,'CUENCA',5,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'GIRON',5,'0',1),
+	 (3,'GUALACEO',5,'0',1),
+	 (3,'NABON',5,'0',1),
+	 (3,'PAUTE',5,'0',1),
+	 (3,'PUCARA',5,'0',1),
+	 (3,'SAN FERNANDO',5,'0',1),
+	 (3,'SANTA ISABEL',5,'0',1),
+	 (3,'SIGSIG',5,'0',1),
+	 (3,'OÑA',5,'0',1),
+	 (3,'CHORDELEG',5,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'EL PAN',5,'0',1),
+	 (3,'SEVILLA DE ORO',5,'0',1),
+	 (3,'GUACHAPALA',5,'0',1),
+	 (3,'CAMILO PONCE ENRIQUEZ',5,'0',1),
+	 (3,'GUARANDA',6,'0',1),
+	 (3,'CHILLANES',6,'0',1),
+	 (3,'CHIMBO',6,'0',1),
+	 (3,'ECHEANDIA',6,'0',1),
+	 (3,'SAN MIGUEL',6,'0',1),
+	 (3,'CALUMA',6,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'LAS NAVES',6,'0',1),
+	 (3,'AZOGUES',7,'0',1),
+	 (3,'BIBLIAN',7,'0',1),
+	 (3,'CAÑAR',7,'0',1),
+	 (3,'LA TRONCAL',7,'0',1),
+	 (3,'EL TAMBO',7,'0',1),
+	 (3,'DELEG',7,'0',1),
+	 (3,'SUSCAL',7,'0',1),
+	 (3,'TULCAN',8,'0',1),
+	 (3,'BOLIVAR',8,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'ESPEJO',8,'0',1),
+	 (3,'MIRA',8,'0',1),
+	 (3,'MONTUFAR',8,'0',1),
+	 (3,'SAN PEDRO DE HUACA',8,'0',1),
+	 (3,'LATACUNGA',9,'0',1),
+	 (3,'LA MANA',9,'0',1),
+	 (3,'PANGUA',9,'0',1),
+	 (3,'PUJILI',9,'0',1),
+	 (3,'SALCEDO',9,'0',1),
+	 (3,'SAQUISILI',9,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'SIGCHOS',9,'0',1),
+	 (3,'RIOBAMBA',10,'0',1),
+	 (3,'ALAUSI',10,'0',1),
+	 (3,'COLTA',10,'0',1),
+	 (3,'CHAMBO',10,'0',1),
+	 (3,'CHUNCHI',10,'0',1),
+	 (3,'GUAMOTE',10,'0',1),
+	 (3,'GUANO',10,'0',1),
+	 (3,'PALLATANGA',10,'0',1),
+	 (3,'PENIPE',10,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'CUMANDA',10,'0',1),
+	 (3,'MACHALA',11,'0',1),
+	 (3,'ARENILLAS',11,'0',1),
+	 (3,'ATAHUALPA',11,'0',1),
+	 (3,'BALSAS',11,'0',1),
+	 (3,'CHILLA',11,'0',1),
+	 (3,'EL GUABO',11,'0',1),
+	 (3,'HUAQUILLAS',11,'0',1),
+	 (3,'MARCABELI',11,'0',1),
+	 (3,'PASAJE',11,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'PIÑAS',11,'0',1),
+	 (3,'PORTOVELO',11,'0',1),
+	 (3,'SANTA ROSA',11,'0',1),
+	 (3,'ZARUMA',11,'0',1),
+	 (3,'LAS LAJAS',11,'0',1),
+	 (3,'ESMERALDAS',12,'0',1),
+	 (3,'ELOY ALFARO',12,'0',1),
+	 (3,'MUISNE',12,'0',1),
+	 (3,'QUININDE',12,'0',1),
+	 (3,'SAN LORENZO',12,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'ATACAMES',12,'0',1),
+	 (3,'RIO VERDE',12,'0',1),
+	 (3,'LA CONCORDIA',27,'0',1),
+	 (3,'GUAYAQUIL',13,'0',1),
+	 (3,'ALFREDO BAQUERIZO MORENO',13,'0',1),
+	 (3,'BALAO',13,'0',1),
+	 (3,'BALZAR',13,'0',1),
+	 (3,'COLIMES',13,'0',1),
+	 (3,'DAULE',13,'0',1),
+	 (3,'DURAN',13,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'EL EMPALME',13,'0',1),
+	 (3,'EL TRIUNFO',13,'0',1),
+	 (3,'MILAGRO',13,'0',1),
+	 (3,'NARANJAL',13,'0',1),
+	 (3,'NARANJITO',13,'0',1),
+	 (3,'PALESTINA',13,'0',1),
+	 (3,'PEDRO CARBO',13,'0',1),
+	 (3,'SAMBORONDON',13,'0',1),
+	 (3,'SANTA LUCIA',13,'0',1),
+	 (3,'SALITRE',13,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'SAN JACINTO DE YAGUACHI',13,'0',1),
+	 (3,'PLAYAS',13,'0',1),
+	 (3,'SIMON BOLIVAR',13,'0',1),
+	 (3,'CORONEL MARCELINO MARIDUEÑA',13,'0',1),
+	 (3,'LOMAS DE SARGENTILLO',13,'0',1),
+	 (3,'NOBOL',13,'0',1),
+	 (3,'GENERAL ANTONIO ELIZALDE',13,'0',1),
+	 (3,'ISIDRO AYORA',13,'0',1),
+	 (3,'IBARRA',14,'0',1),
+	 (3,'ANTONIO ANTE',14,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'COTACACHI',14,'0',1),
+	 (3,'OTAVALO',14,'0',1),
+	 (3,'PIMAMPIRO',14,'0',1),
+	 (3,'SAN MIGUEL DE URCUQUI',14,'0',1),
+	 (3,'LOJA',15,'0',1),
+	 (3,'CALVAS',15,'0',1),
+	 (3,'CATAMAYO',15,'0',1),
+	 (3,'CELICA',15,'0',1),
+	 (3,'CHAGUARPAMBA',15,'0',1),
+	 (3,'ESPINDOLA',15,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'GONZANAMA',15,'0',1),
+	 (3,'MACARA',15,'0',1),
+	 (3,'PALTAS',15,'0',1),
+	 (3,'PUYANGO',15,'0',1),
+	 (3,'SARAGURO',15,'0',1),
+	 (3,'SOZORANGA',15,'0',1),
+	 (3,'ZAPOTILLO',15,'0',1),
+	 (3,'PINDAL',15,'0',1),
+	 (3,'QUILANGA',15,'0',1),
+	 (3,'OLMEDO',15,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'BABAHOYO',16,'0',1),
+	 (3,'BABA',16,'0',1),
+	 (3,'MONTALVO',16,'0',1),
+	 (3,'PUEBLOVIEJO',16,'0',1),
+	 (3,'QUEVEDO',16,'0',1),
+	 (3,'URDANETA',16,'0',1),
+	 (3,'VENTANAS',16,'0',1),
+	 (3,'VINCES',16,'0',1),
+	 (3,'PALENQUE',16,'0',1),
+	 (3,'BUENA FE',16,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'VALENCIA',16,'0',1),
+	 (3,'MOCACHE',16,'0',1),
+	 (3,'QUINSALOMA',16,'0',1),
+	 (3,'PORTOVIEJO',17,'0',1),
+	 (3,'BOLIVAR',17,'0',1),
+	 (3,'CHONE',17,'0',1),
+	 (3,'EL CARMEN',17,'0',1),
+	 (3,'FLAVIO ALFARO',17,'0',1),
+	 (3,'JIPIJAPA',17,'0',1),
+	 (3,'JUNIN',17,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'MANTA',17,'0',1),
+	 (3,'MONTECRISTI',17,'0',1),
+	 (3,'PAJAN',17,'0',1),
+	 (3,'PICHINCHA',17,'0',1),
+	 (3,'ROCAFUERTE',17,'0',1),
+	 (3,'SANTA ANA',17,'0',1),
+	 (3,'SUCRE',17,'0',1),
+	 (3,'TOSAGUA',17,'0',1),
+	 (3,'24 DE MAYO',17,'0',1),
+	 (3,'PEDERNALES',17,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'OLMEDO',17,'0',1),
+	 (3,'PUERTO LOPEZ',17,'0',1),
+	 (3,'JAMA',17,'0',1),
+	 (3,'JARAMIJO',17,'0',1),
+	 (3,'SAN VICENTE',17,'0',1),
+	 (3,'MORONA',18,'0',1),
+	 (3,'GUALAQUIZA',18,'0',1),
+	 (3,'LIMON INDANZA',18,'0',1),
+	 (3,'PALORA',18,'0',1),
+	 (3,'SANTIAGO',18,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'SUCUA',18,'0',1),
+	 (3,'HUAMBOYA',18,'0',1),
+	 (3,'SAN JUAN BOSCO',18,'0',1),
+	 (3,'TAISHA',18,'0',1),
+	 (3,'LOGROÑO',18,'0',1),
+	 (3,'PABLO SEXTO',18,'0',1),
+	 (3,'TIWINTZA',18,'0',1),
+	 (3,'TENA',19,'0',1),
+	 (3,'ARCHIDONA',19,'0',1),
+	 (3,'EL CHACO',19,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'QUIJOS',19,'0',1),
+	 (3,'CARLOS JULIO AROSEMENA TOLA',19,'0',1),
+	 (3,'PASTAZA',20,'0',1),
+	 (3,'MERA',20,'0',1),
+	 (3,'SANTA CLARA',20,'0',1),
+	 (3,'ARAJUNO',20,'0',1),
+	 (3,'QUITO',21,'0',1),
+	 (3,'CAYAMBE',21,'0',1),
+	 (3,'MEJIA',21,'0',1),
+	 (3,'PEDRO MONCAYO',21,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'RUMIÑAHUI',21,'0',1),
+	 (3,'SAN MIGUEL DE LOS BANCOS',21,'0',1),
+	 (3,'PEDRO VICENTE MALDONADO',21,'0',1),
+	 (3,'PUERTO QUITO',21,'0',1),
+	 (3,'AMBATO',22,'0',1),
+	 (3,'BAÑOS DE AGUA SANTA ',22,'0',1),
+	 (3,'CEVALLOS',22,'0',1),
+	 (3,'MOCHA',22,'0',1),
+	 (3,'PATATE',22,'0',1),
+	 (3,'QUERO',22,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'SAN PEDRO DE PELILEO',22,'0',1),
+	 (3,'SANTIAGO DE PILLARO',22,'0',1),
+	 (3,'TISALEO',22,'0',1),
+	 (3,'ZAMORA',23,'0',1),
+	 (3,'CHINCHIPE',23,'0',1),
+	 (3,'NANGARITZA',23,'0',1),
+	 (3,'YACUAMBI',23,'0',1),
+	 (3,'YANTZAZA',23,'0',1),
+	 (3,'EL PANGUI',23,'0',1),
+	 (3,'CENTINELA DEL CONDOR',23,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'PALANDA',23,'0',1),
+	 (3,'PAQUISHA',23,'0',1),
+	 (3,'SAN CRISTOBAL',24,'0',1),
+	 (3,'ISABELA',24,'0',1),
+	 (3,'SANTA CRUZ',24,'0',1),
+	 (3,'LAGO AGRIO',25,'0',1),
+	 (3,'GONZALO PIZARRO',25,'0',1),
+	 (3,'PUTUMAYO',25,'0',1),
+	 (3,'SHUSHUFINDI',25,'0',1),
+	 (3,'SUCUMBIOS',25,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'CASCALES',25,'0',1),
+	 (3,'CUYABENO',25,'0',1),
+	 (3,'ORELLANA',26,'0',1),
+	 (3,'AGUARICO',26,'0',1),
+	 (3,'LA JOYA DE LOS SACHAS',26,'0',1),
+	 (3,'LORETO',26,'0',1),
+	 (3,'SANTO DOMINGO',27,'0',1),
+	 (3,'SANTA ELENA',28,'0',1),
+	 (3,'LA LIBERTAD',28,'0',1),
+	 (3,'SALINAS',28,'0',1);
+INSERT INTO vcnn.detallecatalogo (catalogo_id,descripcion,detallecatalogo_id,valor,estado) VALUES
+	 (3,'ZONA NO DELIMITADO',29,'0',1),
+	 (3,'ZONA NO DELIMITADO',29,'0',1),
+	 (3,'ZONA NO DELIMITADO',29,'0',1),
+	 (5,'PFIZER',NULL,NULL,1),
+	 (5,'MODERNA',NULL,NULL,1),
+	 (5,'JOHNSON & JOHNSON',NULL,NULL,1);
+
+INSERT INTO vcnn.perfil (descripcion,estado) VALUES
+	 ('Administrador',1),
+	 ('Medico',1);
+	 
+INSERT INTO vcnn.usuario (identificacion,nombres,apellidos,estado,login,password,fechaingreso) VALUES
+	 ('1715932115','DAVID','MURILLO',1,'1715932115','FE0BB9151F5DB5F38CA2167D6B777C268AD9D0D050E45654178BEC814DA5C546D53FB9077F6A12976055E747A390BCC8A738C2DB697E344A749D5C00B3585455','2021-06-22');
+	 
+INSERT INTO vcnn.perfil (descripcion,estado) VALUES
+	 ('Administrador',1);

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      > 
+<ui:composition template="/templates/menuT.xhtml">
+	<ui:define name="panel">Usuarios</ui:define>
+	<ui:define name="contenido">
+		<p:panelGrid id="cab" columns="2">
+			<p:outputLabel value="Identificacion"></p:outputLabel>
+			<p:inputText id="prsnIdent" value="#{usuarioController.usuario.identificacion}">
+				<p:ajax event="blur"
+						listener="#{usuarioController.validarIdentificacion(usuarioController.usuario.identificacion)}"
+						update="growl prsnIdent">
+				</p:ajax>
+			</p:inputText>
+			<p:outputLabel value="Nombres"></p:outputLabel>
+			<p:inputText value="#{usuarioController.usuario.nombres}" onkeyup="this.value = this.value.toUpperCase();"></p:inputText>
+			<p:outputLabel value="Apellidos"></p:outputLabel>
+			<p:inputText value="#{usuarioController.usuario.apellidos}" onkeyup="this.value = this.value.toUpperCase();"></p:inputText>
+			<p:outputLabel value="Login"></p:outputLabel>
+			<p:inputText value="#{usuarioController.usuario.login}"></p:inputText>
+			<p:outputLabel value="Password"></p:outputLabel>
+			<p:password value="#{usuarioController.usuario.password}" ></p:password>
+			<p:outputLabel value="Perfil"></p:outputLabel>
+			<p:selectOneMenu id="cmbPerfil"
+							 value="#{usuarioController.codigoPerfil}"
+							 autoWidth="false"
+				>
+				<f:selectItem itemLabel="Seleccione" value="#{null}" />
+				<f:selectItems
+					value="#{usuarioController.perfiles}"
+					var="item" itemLabel="#{item.descripcion}"
+					itemValue="#{item.id}">
+				</f:selectItems>
+			</p:selectOneMenu>
+		</p:panelGrid>
+		<p:dataTable id="tbl" 
+					var="item"
+					value="#{usuarioController.usuarioPerfiles}"
+					paginator="true"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					paginatorPosition="bottom" emptyMessage="No existen información"
+					selection="#{usuarioController.usuarioperfil}" rowKey="#{item.id}"
+					rowSelectMode="add"
+					rows="15">
+			<p:column headerText="Identificacion">
+				<p:outputLabel value="#{item.usuario.identificacion}"></p:outputLabel>
+			</p:column>
+			<p:column headerText="Apellidos">
+				<p:outputLabel value="#{item.usuario.apellidos}"></p:outputLabel>
+			</p:column>
+			<p:column headerText="Nombres">
+				<p:outputLabel value="#{item.usuario.nombres}"></p:outputLabel>
+			</p:column>
+			<p:column headerText="Perfil">
+				<p:outputLabel value="#{item.perfil.descripcion}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<p:commandButton value="Eliminar" action="#{usuarioController.delete()}" icon="pi pi-trash" update="tbl">
+					<f:setPropertyActionListener value="#{item}" target="#{usuarioController.usuarioperfil}"></f:setPropertyActionListener>
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
+		<br />
+		<p:commandButton value="Guardar" actionListener="#{usuarioController.save()}" update="tbl cab"></p:commandButton>
+		<p:commandButton value="Cancelar" actionListener="#{usuarioController.cancel()}" update="tbl cab"></p:commandButton>
+		<p:commandButton value="Salir" actionListener="#{usuarioController.procesarCliente()}"></p:commandButton>
+		<br />
+	</ui:define>
+</ui:composition>
+</html>

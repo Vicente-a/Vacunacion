@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      > 
+<ui:composition template="/templates/menuT.xhtml">
+	<ui:define name="panel">
+		<p:outputLabel value="Ingreso de Datos Ciudadano"></p:outputLabel>
+	</ui:define>
+	<ui:define name="contenido">
+		<p:panelGrid id="pnlGlobal" columns="2">
+			<p:outputLabel value="Cedula *" for="txtCedula"></p:outputLabel>
+			<p:inputText id="txtCedula" value="#{ciudadanoController.ciudadano.cedula}"  onkeypress="validateInput('[0-9]*'); return event.keyCode != 13;">
+				<p:ajax event="blur" listener="#{ciudadanoController.find()}" update=":frm:growl pnlGlobal" />
+			</p:inputText>
+			<p:outputLabel value="Nombres *" for="txtNombres"></p:outputLabel>
+			<p:inputText  id="txtNombres" value="#{ciudadanoController.ciudadano.nombres}" onkeyup="this.value = this.value.toUpperCase();"></p:inputText>
+			<p:outputLabel value="Apellidos *" for="txtApellidos"></p:outputLabel>
+			<p:inputText id="txtApellidos" value="#{ciudadanoController.ciudadano.apellidos}" onkeyup="this.value = this.value.toUpperCase();"></p:inputText>
+			<p:outputLabel value="Fecha de Nacimiento *" for="fecha"></p:outputLabel>
+			<p:calendar id="fecha" value="#{ciudadanoController.fechaNacimiento}" yearRange="c-100:c+100"  navigator="true" pattern="yyyy-MM-dd" showOn="button"  ></p:calendar>
+			<p:outputLabel value="Correo *" for="txtCorreo"></p:outputLabel>
+			<p:inputText id="txtCorreo" value="#{ciudadanoController.ciudadano.correo}" required="#{ciudadanoController.requerido}" onkeyup="this.value = this.value.toLowerCase();" validatorMessage="Formato de corrreo no es válido">
+				<f:validateRegex pattern="#{ciudadanoController.validaCorreo}" />
+			</p:inputText>
+			<p:outputLabel value="Telefono *" for="txtTelefono"></p:outputLabel>
+			<p:inputText id="txtTelefono" value="#{ciudadanoController.ciudadano.telefono}"  onkeypress="validateInput('[0-9]*');"></p:inputText>
+			<p:outputLabel value="Pais *" for="cmbPais"></p:outputLabel>
+			<p:selectOneMenu id="cmbPais"
+							 value="#{ciudadanoController.codigoPais}"
+							 autoWidth="true"
+				>
+				<f:selectItem itemLabel="Seleccione" value="#{null}" />
+				<f:selectItems
+					value="#{ciudadanoController.paises}"
+					var="item" itemLabel="#{item.descripcion}"
+					itemValue="#{item.id}">
+				</f:selectItems>
+				<p:ajax event="change" listener="#{ciudadanoController.findProvincias()}" update="cmbProvincia"></p:ajax>
+			</p:selectOneMenu>
+			<p:outputLabel value="Provincia *" for="cmbProvincia"></p:outputLabel>
+			<p:selectOneMenu id="cmbProvincia"
+							 value="#{ciudadanoController.codigoProvincia}"
+							 autoWidth="true"
+				>
+				<f:selectItem itemLabel="Seleccione" value="#{null}" />
+				<f:selectItems
+					value="#{ciudadanoController.provincias}"
+					var="item" itemLabel="#{item.descripcion}"
+					itemValue="#{item.id}">
+				</f:selectItems>
+				<p:ajax event="change" listener="#{ciudadanoController.findCanton()}" update="cmbCanton"></p:ajax>
+			</p:selectOneMenu>
+			<p:outputLabel value="Ciudad *" for="cmbCanton"></p:outputLabel>
+			<p:selectOneMenu id="cmbCanton"
+							 value="#{ciudadanoController.codigoCanton}"
+							 autoWidth="true"
+				>
+				<f:selectItem itemLabel="Seleccione" value="#{null}" />
+				<f:selectItems
+					value="#{ciudadanoController.cantones}"
+					var="item" itemLabel="#{item.descripcion}"
+					itemValue="#{item.id}">
+				</f:selectItems>
+			</p:selectOneMenu>
+			<p:outputLabel value="Sector *" for="cmbSector"></p:outputLabel>
+			<p:selectOneMenu id="cmbSector"
+							 value="#{ciudadanoController.codigoSector}"
+							 autoWidth="true"
+				>
+				<f:selectItem itemLabel="Seleccione" value="#{null}" />
+				<f:selectItems
+					value="#{ciudadanoController.sectores}"
+					var="item" itemLabel="#{item.descripcion}"
+					itemValue="#{item.id}">
+				</f:selectItems>
+			</p:selectOneMenu>
+		</p:panelGrid>
+		<div class="p-formgroup-inline">
+			<p:commandButton value="Ingresar" actionListener="#{ciudadanoController.save()}" update="growl pnlGlobal"></p:commandButton>
+			<p:commandButton value="Login" actionListener="#{ciudadanoController.redirigir()}" ></p:commandButton>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+	<title><ui:insert name="tituloPagina">VACUNAS</ui:insert>
+	</title>
+	<h:outputScript name="basicas.js" library="js"></h:outputScript>
+	<ui:insert name="head"/>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9,chrome=1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </f:facet>
+    <style type="text/css">
+            .nba-grid {
+                width: 100%;
+                table-layout: fixed;
+                word-wrap: break-word;
+            }
+            
+            .ui-scrollpanel-content p:first-child {
+                margin: 0;
+            }
+            .headline_class {
+			  font-weight: bold;
+			  font-size: 30px;
+			}
+			.headlineTitulo_class {
+			  font-weight: bold;
+			  font-size: 30px;
+			  color: blue
+			}
+        </style>
+    <script type="text/javascript">
+	        function validateInput(regexString) {
+	            var theEvent = window.event || event;
+	            var key = theEvent.keyCode || theEvent.which;
+	            if (key >= 46) {
+	                key = String.fromCharCode(key);
+	                var regex = new RegExp("^" + regexString + "$");
+	                if (!regex.test(key)) {
+	                    theEvent.returnValue = false;
+	                    if (theEvent.preventDefault) {
+	                        theEvent.preventDefault();
+	                    }
+	                }
+	            }
+	     	}
+		</script> 
+</h:head> 
+<h:body> 
+	<div class="p-grid">
+		<div class="p-col-4">
+			<table style="border: 0px solid #CAD6E0" align="left" 
+				cellpadding="0" cellspacing="0" border="0" width="500">
+				<tr>
+<!-- 					<td height="50" align="left" valign="middle" width="98%"><p:graphicImage -->
+<!-- 							value="/images/logotipox.jpg" height="75" width="400" /> -->
+<!-- 					</td> -->
+				</tr>
+			</table>
+			<table style="border: 0px solid #CAD6E0" align="center"
+				cellpadding="0" cellspacing="0" border="0" width="500">
+				<tr>
+					<td height="5" align="center" width="2%">
+						
+					</td>
+				</tr>      
+			</table>
+			<p:menu model="#{validacionController.model}"/>
+		</div>
+		<div class="p-col-8">
+			<table width="100%" style="height: 150px" align="left" cellpadding="0"
+					cellspacing="0" border="0">
+					<tr>
+						<td align="center" width="100%" valign="middle" class="formulario"
+							style=" font-family: Verdana, Arial, Helvetica, sans-serif;">
+							<h5 class="headlineTitulo_class">SISTEMA DE VACUNACIÓN</h5>
+	 						<p:panelGrid id="pnlZero" columns="1">
+								<f:facet name="header">
+									<p:row>
+										<p:column styleClass="headlineTitulo_class" style="color: blue"><ui:insert name="panel">SISTEMA DE VACUNACIÓN</ui:insert></p:column>
+									</p:row>
+							    </f:facet>
+							</p:panelGrid>
+							<h:form id="frm" target="_blank">
+								<p:growl id="growl" showDetail="false" sticky="true" life="3000" />
+								<ui:insert name="contenido">
+									Aqui va el contenido
+								</ui:insert>
+								<p:ajaxStatus onstart="PF('statusDialog').show()" oncomplete="PF('statusDialog').hide()" />
+						        <p:dialog modal="true" 
+						        		  widgetVar="statusDialog" 
+						        		  header="Procesando"   
+						                  draggable="false" 
+						                  closable="false"
+						                  >
+						            <p:graphicImage value="/images/ajaxloadingbar.gif" />  
+						        </p:dialog> 
+							</h:form>
+						</td>
+					</tr>
+			</table>
+		</div>
+	</div>
+</h:body> 
+</html>

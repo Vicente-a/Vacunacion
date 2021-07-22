@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      > 
+<ui:composition template="/templates/basic.xhtml">
+	<ui:define name="tituloFormulario">
+		<p:outputLabel value="Validación de acceso"></p:outputLabel>
+	</ui:define>
+	<ui:define name="contenido">
+			<p:panelGrid columns="2" styleClass="ui-noborder">
+				<p:outputLabel value="Login"></p:outputLabel>
+				<p:inputText id="txtLogin" value="#{validacionController.login}"></p:inputText>
+				<p:outputLabel value="Clave"></p:outputLabel>
+				<p:password id="txtClave" value="#{validacionController.clave}"></p:password>
+			</p:panelGrid>
+			<br />
+			<p:commandButton id="btnAceptar" value="Aceptar" action="#{validacionController.validarAcceso()}" update=":frm:growl"></p:commandButton>
+	</ui:define>
+</ui:composition>
+</html>

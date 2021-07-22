@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      > 
+<ui:composition template="/templates/menuT.xhtml">
+	<ui:define name="panel">Vacunas</ui:define>
+	<ui:define name="contenido">
+		<p:dialog id="dlg" header="Carga" widgetVar="dlg" modal="true" responsive="true" width="50%" showEffect="fade" hideEffect="fade" closable="false">
+			<p:panelGrid  id="cabDos" columns="2">
+				<p:outputLabel value="Vacuna"></p:outputLabel>
+				<p:outputLabel value="#{vacunasController.vacuna.detallecatalogo.descripcion}"></p:outputLabel>
+				<p:outputLabel value="Dosis"></p:outputLabel>
+				<p:outputLabel value="#{vacunasController.vacuna.dosis}"></p:outputLabel>
+				<p:outputLabel value="Cantidad"></p:outputLabel>
+				<p:inputText value="#{vacunasController.cantidadVacuna}"></p:inputText>
+			</p:panelGrid>
+			<p:commandButton value="Procesar" actionListener="#{vacunasController.update()}" oncomplete="PF('dlg').hide();" update="tbl"></p:commandButton>
+			<p:commandButton value="Salir" oncomplete="PF('dlg').hide();" update="tbl"></p:commandButton>
+		</p:dialog>
+		<p:panelGrid  id="cab" columns="2">
+			<p:outputLabel value="Vacuna"></p:outputLabel>
+			<p:selectOneMenu id="cmbVacuna"
+							 value="#{vacunasController.codigoVacuna}"
+							 autoWidth="false"
+				>
+				<f:selectItem itemLabel="Seleccione" value="#{null}" />
+				<f:selectItems
+					value="#{vacunasController.vacunas}"
+					var="item" itemLabel="#{item.descripcion}"
+					itemValue="#{item.id}">
+				</f:selectItems>
+			</p:selectOneMenu>
+			<p:outputLabel value="Dosis"></p:outputLabel>
+			<p:inputText value="#{vacunasController.vacuna.dosis}"></p:inputText>
+			<p:outputLabel value="Cantidad"></p:outputLabel>
+			<p:inputText value="#{vacunasController.vacuna.cantidad}"></p:inputText>
+		</p:panelGrid>
+		<br />
+		<p:commandButton value="Guardar" actionListener="#{vacunasController.save()}" update="tbl cab"></p:commandButton>
+		<p:commandButton value="Cancelar" actionListener="#{vacunasController.cancel()}" update="tbl cab"></p:commandButton>
+		<br />
+		<p:dataTable id="tbl" 
+					var="item"
+					value="#{vacunasController.inventario}"
+					paginator="true"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					paginatorPosition="bottom" emptyMessage="No existen información"
+					rows="15">
+			<p:column headerText="Descripcion">
+				<p:outputLabel value="#{item.detallecatalogo.descripcion}"></p:outputLabel>
+			</p:column>
+			<p:column headerText="Dosis">
+				<p:outputLabel value="#{item.dosis}"></p:outputLabel>
+			</p:column>
+			<p:column headerText="Cantidad">
+				<p:outputLabel value="#{item.saldo}"></p:outputLabel>
+			</p:column>
+			<p:column headerText="">
+				<p:commandButton value="Actualizar" actionListener="#{vacunasController.tomaDosis(item.dosis)}" oncomplete="PF('dlg').show();" update=":frm:dlg :frm:cabDos">
+					<f:setPropertyActionListener value="#{item}" target="#{vacunasController.vacuna}"></f:setPropertyActionListener>
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
+		<br />
+		<p:commandButton value="Salir" actionListener="#{vacunasController.procesarCliente()}" update="tbl cab"></p:commandButton>
+		<br />
+	</ui:define>
+</ui:composition>
+</html>

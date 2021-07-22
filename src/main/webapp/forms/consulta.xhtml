@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      > 
+<ui:composition template="/templates/menuT.xhtml">
+	<ui:define name="panel">Consulta</ui:define>
+	<ui:define name="contenido">
+		<p:panelGrid id="busca" columns="2">
+			<p:outputLabel value="Cedula"></p:outputLabel>
+			<p:inputText value="#{consultaController.identificacion}"></p:inputText>
+		</p:panelGrid>
+		<br />
+		<p:commandButton value="Consultar" actionListener="#{consultaController.find()}" update=":frm:growl :frm:cab :frm:tbl busca :frm:btnGuardar datos"></p:commandButton>
+		<p:commandButton value="Cancelar" actionListener="#{consultaController.cancel()}" update=":frm:growl :frm:cab :frm:tbl busca :frm:btnGuardar datos"></p:commandButton>
+		<br />
+		<br />
+		<p:panelGrid id="cab" columns="2">
+			<p:outputLabel value="Cedula"></p:outputLabel>
+			<p:outputLabel value="#{consultaController.ciudadano.cedula}"></p:outputLabel>
+			<p:outputLabel value="Nombres"></p:outputLabel>
+			<p:outputLabel value="#{consultaController.ciudadano.nombres}"></p:outputLabel>
+			<p:outputLabel value="Apellidos"></p:outputLabel>
+			<p:outputLabel value="#{consultaController.ciudadano.apellidos}"></p:outputLabel>
+			<p:outputLabel value="Fecha de Nacimiento"></p:outputLabel>
+			<p:outputLabel value="#{consultaController.ciudadano.fechanacimiento}" yearRange="c-100:c+100"  navigator="true" pattern="yyyy-MM-dd" showOn="button" ></p:outputLabel>
+			<p:outputLabel value="Correo"></p:outputLabel>
+			<p:outputLabel value="#{consultaController.ciudadano.correo}"></p:outputLabel>
+			<p:outputLabel value="Telefono"></p:outputLabel>
+			<p:outputLabel value="#{consultaController.ciudadano.telefono}"></p:outputLabel>
+			<p:outputLabel value="Pais"></p:outputLabel>
+			<p:outputLabel value="#{consultaController.ciudadano.detallecatalogo1.descripcion}"></p:outputLabel>
+			<p:outputLabel value="Provincia"></p:outputLabel>
+			<p:outputLabel value="#{consultaController.ciudadano.detallecatalogo2.descripcion}"></p:outputLabel>
+			<p:outputLabel value="Ciudad"></p:outputLabel>
+			<p:outputLabel value="#{consultaController.ciudadano.detallecatalogo3.descripcion}"></p:outputLabel>
+			<p:outputLabel value="Sector"></p:outputLabel>
+			<p:outputLabel value="#{consultaController.ciudadano.detallecatalogo4.descripcion}"></p:outputLabel>
+		</p:panelGrid>
+		<br />
+		<br />
+		<p:panel id="datos" visible="#{consultaController.ocultar}">
+			<p:dataTable id="tbl" 
+						widgetVar="tbl"
+						var="item"
+						value="#{consultaController.vacunas}"
+						paginator="true"
+						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+						paginatorPosition="bottom" emptyMessage="No existen información"
+						selection="#{consultaController.vacuna}" 
+						rowKey="#{item.id}"
+						rows="15">
+				<p:column selectionMode="single" style="width:16px;text-align:center"/>
+				<p:column headerText="Laboratorio">
+					<p:outputLabel value="#{item.detallecatalogo.descripcion}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Dosis">
+					<p:outputLabel value="#{item.dosis}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Cantidad">
+					<p:outputLabel value="#{item.saldo}"></p:outputLabel>
+				</p:column>
+				
+			</p:dataTable>
+			<p:commandButton id="btnGuardar" value="Guardar" actionListener="#{consultaController.save()}" update=":frm:growl :frm:cab :frm:tbl" disabled="#{consultaController.ocultar}"></p:commandButton>
+		</p:panel>
+		<br />
+		<br />
+		<p:commandButton value="Salir" actionListener="#{consultaController.procesarCliente()}" update=":frm:growl :frm:cab :frm:tbl"></p:commandButton>
+	</ui:define>
+</ui:composition>
+</html>

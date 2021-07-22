@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      > 
+<ui:composition template="/templates/menuT.xhtml">
+	<ui:define name="panel">Consulta Administrador</ui:define>
+	<ui:define name="contenido">
+		<p:panelGrid id="busca" columns="2">
+			<p:outputLabel value="Cedula"></p:outputLabel>
+			<p:inputText value="#{consultaAdmController.identificacion}"></p:inputText>
+		</p:panelGrid>
+		<br />
+		<p:commandButton value="Consultar" actionListener="#{consultaAdmController.find()}" update=":frm:growl :frm:cab :frm:tbl"></p:commandButton>
+		<br />
+		<br />
+		<p:panelGrid id="cab" columns="2">
+			<p:outputLabel value="Cedula"></p:outputLabel>
+			<p:outputLabel value="#{consultaAdmController.ciudadano.cedula}"></p:outputLabel>
+			<p:outputLabel value="Nombres"></p:outputLabel>
+			<p:outputLabel value="#{consultaAdmController.ciudadano.nombres}"></p:outputLabel>
+			<p:outputLabel value="Apellidos"></p:outputLabel>
+			<p:outputLabel value="#{consultaAdmController.ciudadano.apellidos}"></p:outputLabel>
+			<p:outputLabel value="Fecha de Nacimiento"></p:outputLabel>
+			<p:outputLabel value="#{consultaAdmController.ciudadano.fechanacimiento}" yearRange="c-100:c+100"  navigator="true" pattern="yyyy-MM-dd" showOn="button" ></p:outputLabel>
+			<p:outputLabel value="Correo"></p:outputLabel>
+			<p:inputText value="#{consultaAdmController.ciudadano.correo}" onkeyup="this.value = this.value.toLowerCase();"></p:inputText>
+			<p:outputLabel value="Telefono"></p:outputLabel>
+			<p:inputText value="#{consultaAdmController.ciudadano.telefono}"></p:inputText>
+			<p:outputLabel value="Pais"></p:outputLabel>
+			<p:selectOneMenu id="cmbPais"
+							 value="#{consultaAdmController.codigoPais}"
+							 autoWidth="true"
+				>
+				<f:selectItem itemLabel="Seleccione" value="#{null}" />
+				<f:selectItems
+					value="#{consultaAdmController.paises}"
+					var="item" itemLabel="#{item.descripcion}"
+					itemValue="#{item.id}">
+				</f:selectItems>
+				<p:ajax event="change" listener="#{consultaAdmController.findProvincias()}" update="cmbProvincia"></p:ajax>
+			</p:selectOneMenu>
+			<p:outputLabel value="Provincia"></p:outputLabel>
+			<p:selectOneMenu id="cmbProvincia"
+							 value="#{consultaAdmController.codigoProvincia}"
+							 autoWidth="true"
+				>
+				<f:selectItem itemLabel="Seleccione" value="#{null}" />
+				<f:selectItems
+					value="#{consultaAdmController.provincias}"
+					var="item" itemLabel="#{item.descripcion}"
+					itemValue="#{item.id}">
+				</f:selectItems>
+				<p:ajax event="change" listener="#{consultaAdmController.findCanton()}" update="cmbCanton"></p:ajax>
+			</p:selectOneMenu>
+			<p:outputLabel value="Ciudad"></p:outputLabel>
+			<p:selectOneMenu id="cmbCanton"
+							 value="#{consultaAdmController.codigoCanton}"
+							 autoWidth="true"
+				>
+				<f:selectItem itemLabel="Seleccione" value="#{null}" />
+				<f:selectItems
+					value="#{consultaAdmController.cantones}"
+					var="item" itemLabel="#{item.descripcion}"
+					itemValue="#{item.id}">
+				</f:selectItems>
+			</p:selectOneMenu>
+			<p:outputLabel value="Sector"></p:outputLabel>
+			<p:selectOneMenu id="cmbSector"
+							 value="#{consultaAdmController.codigoSector}"
+							 autoWidth="true"
+				>
+				<f:selectItem itemLabel="Seleccione" value="#{null}" />
+				<f:selectItems
+					value="#{consultaAdmController.sectores}"
+					var="item" itemLabel="#{item.descripcion}"
+					itemValue="#{item.id}">
+				</f:selectItems>
+			</p:selectOneMenu>
+		</p:panelGrid>
+		<br />
+		<br />
+		<p:dataTable id="tbl" 
+					var="item"
+					value="#{consultaAdmController.consultas}"
+					paginator="true"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					paginatorPosition="bottom" emptyMessage="No existen información"
+					rows="15">
+			<p:column headerText="Fecha consulta">
+				<p:outputLabel value="#{item.fechaingreso}"></p:outputLabel>
+			</p:column>
+			<p:column headerText="Vacuna">
+				<p:outputLabel value="#{item.vacuna.detallecatalogo.descripcion}"></p:outputLabel>
+			</p:column>
+			<p:column headerText="Dosis">
+				<p:outputLabel value="#{item.vacuna.dosis}"></p:outputLabel>
+			</p:column>
+			<p:column headerText="Doctor">
+				<p:outputLabel value="#{item.usuario.apellidos} #{item.usuario.nombres}"></p:outputLabel>
+			</p:column>
+			
+		</p:dataTable>
+		<br />
+		<br />
+		<p:commandButton value="Guardar" actionListener="#{consultaAdmController.save()}" update=":frm:growl :frm:cab :frm:tbl"></p:commandButton>
+		<p:commandButton value="Cancelar" actionListener="#{consultaAdmController.cancel()}" update=":frm:growl :frm:cab :frm:tbl"></p:commandButton>
+		<p:commandButton value="Salir" actionListener="#{consultaAdmController.procesarCliente()}" update=":frm:growl :frm:cab :frm:tbl"></p:commandButton>
+	</ui:define>
+</ui:composition>
+</html>

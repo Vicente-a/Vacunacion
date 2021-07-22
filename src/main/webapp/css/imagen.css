@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+div.crop-img {
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+div.crop-img img {
+  display: block;
+  max-width: none !important;
+}

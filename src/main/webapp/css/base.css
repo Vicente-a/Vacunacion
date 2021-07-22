@@ -1,0 +1,18 @@
+@CHARSET "ISO-8859-1";
+.ui-widget,
+.ui-widget .ui-widget
+{
+	font-size: 100% !important;
+}
+.ui-panelgrid > tr td, .ui-panelgrid > tr{
+   border-style: none !important
+ }
+ .headline_class {
+  font-weight: bold;
+  font-size: 30px;
+}
+.headlineTitulo_class {
+  font-weight: bold;
+  font-size: 50px;
+  color: green
+}

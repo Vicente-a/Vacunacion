@@ -197,6 +197,13 @@ public class CiudadanoController implements Bean, Serializable {
 		cantones = detallecatalogoDAO.findByFk(" where t.detallecatalogoId = "+codigoProvincia);
 	}
 	
-	
+	public void redirigir() {
+		try {
+			WebUtil.redirect("./forms/Acceso.jsf");
+		} catch (Exception e) {
+			Mensajes.mensajeAdvertencia("Fallo la direccion de la pagina"+e.getMessage());
+		}
+	}
+		
         
 }

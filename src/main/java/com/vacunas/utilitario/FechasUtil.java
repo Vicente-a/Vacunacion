@@ -360,6 +360,32 @@ public class FechasUtil {
         fecha.setTime(fechaParametro);
         return FechasUtil.devuelveDiaSemana(fecha.get(7)) + fecha.get(5) + " de " + FechasUtil.devuelveMes(fecha.get(2)) + " de " + fecha.get(1);
     }
+	private static String devuelveDiaSemana(int dia) {
+        switch (dia) {
+            case 1: {
+                return "Domingo ";
+            }
+            case 2: {
+                return "Lunes ";
+            }
+            case 3: {
+                return "Martes ";
+            }
+            case 4: {
+                return "Mi\u00e9rcoles ";
+            }
+            case 5: {
+                return "Jueves ";
+            }
+            case 6: {
+                return "Viernes ";
+            }
+            case 7: {
+                return "S\u00e1bado ";
+            }
+        }
+        return "";
+    }
 
 
 

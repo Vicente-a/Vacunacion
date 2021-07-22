@@ -557,5 +557,10 @@ public class FechasUtil {
 		return valor;
 	}
     
-    
+    public Usuarioperfil removeUsuarioperfil(Usuarioperfil usuarioperfil) {
+		getUsuarioperfils().remove(usuarioperfil);
+		usuarioperfil.setPerfil(null);
+
+		return usuarioperfil;
+	}
 }

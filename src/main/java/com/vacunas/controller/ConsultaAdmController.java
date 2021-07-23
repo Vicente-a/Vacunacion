@@ -163,5 +163,8 @@ public class ConsultaAdmController implements Bean, Serializable {
 		}
 	}
 	
-	
+	public void procesarCliente() {
+		enviar("/forms/inicio.jsf");
+	}
+
 }

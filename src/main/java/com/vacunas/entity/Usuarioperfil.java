@@ -1,13 +1,12 @@
 package com.vacunas.entity;
-
 import java.io.Serializable;
 import javax.persistence.*;
-
 
 /**
  * The persistent class for the usuarioperfil database table.
  * 
  */
+
 @Entity
 @Table(name="usuarioperfil", schema = "vcnn")
 @NamedQuery(name="Usuarioperfil.findAll", query="SELECT u FROM Usuarioperfil u")

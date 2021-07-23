@@ -13,14 +13,7 @@ import com.vacunas.entity.Usuarioperfil;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * <b> Incluir aqui la descripcion de la clase. </b>
- *
- * @author David Murillo
- *         <p>
- *         [$Author: David Murillo $, $Date: 11/06/2018]
- *         </p>
- */
+
 @Named
 @SessionScoped
 public class VariableSesion implements Serializable {
@@ -33,7 +26,10 @@ public class VariableSesion implements Serializable {
 	@Getter
 	@Setter
 	private List<Usuarioperfil> perfiles;
-
-
-	
 }
+//Inicializando variables en null
+public void setInstanciaNull() {
+		usuario = null;
+		perfiles = null;
+	}
+

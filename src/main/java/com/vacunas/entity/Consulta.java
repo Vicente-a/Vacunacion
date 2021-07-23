@@ -1,5 +1,4 @@
 package com.vacunas.entity;
-
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -108,14 +107,12 @@ public class Consulta implements Serializable {
 	public Detallevacuna addDetallevacuna(Detallevacuna detallevacuna) {
 		getDetallevacunas().add(detallevacuna);
 		detallevacuna.setConsulta(this);
-
 		return detallevacuna;
 	}
 
 	public Detallevacuna removeDetallevacuna(Detallevacuna detallevacuna) {
 		getDetallevacunas().remove(detallevacuna);
 		detallevacuna.setConsulta(null);
-
 		return detallevacuna;
 	}
 

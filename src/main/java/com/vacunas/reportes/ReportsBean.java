@@ -20,6 +20,15 @@ public class ReportsBean extends AbstractReportBean {
         return reportParameters;
 
 	}
-	
+
+public String execute() {
+        try {
+            super.prepareReport();
+        } catch (Exception e) {
+        	Log.error("ReportsBean", "Error execute Exception ", e);
+        }
+        return null;
+    }
+
 
 }

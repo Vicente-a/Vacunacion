@@ -1,13 +1,12 @@
 package com.vacunas.entity;
-
 import java.io.Serializable;
 import javax.persistence.*;
-
 
 /**
  * The persistent class for the detallevacuna database table.
  * 
  */
+
 @Entity
 @Table(name="detallevacuna", schema = "vcnn")
 @NamedQuery(name="Detallevacuna.findAll", query="SELECT d FROM Detallevacuna d")

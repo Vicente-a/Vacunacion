@@ -1,14 +1,13 @@
 package com.vacunas.entity;
-
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
-
 
 /**
  * The persistent class for the detallecatalogo database table.
  * 
  */
+
 @Entity
 @Table(name="detallecatalogo", schema = "vcnn")
 @NamedQuery(name="Detallecatalogo.findAll", query="SELECT d FROM Detallecatalogo d")
@@ -115,14 +114,12 @@ public class Detallecatalogo implements Serializable {
 	public Ciudadano addCiudadanos1(Ciudadano ciudadanos1) {
 		getCiudadanos1().add(ciudadanos1);
 		ciudadanos1.setDetallecatalogo1(this);
-
 		return ciudadanos1;
 	}
 
 	public Ciudadano removeCiudadanos1(Ciudadano ciudadanos1) {
 		getCiudadanos1().remove(ciudadanos1);
 		ciudadanos1.setDetallecatalogo1(null);
-
 		return ciudadanos1;
 	}
 
@@ -137,14 +134,12 @@ public class Detallecatalogo implements Serializable {
 	public Ciudadano addCiudadanos2(Ciudadano ciudadanos2) {
 		getCiudadanos2().add(ciudadanos2);
 		ciudadanos2.setDetallecatalogo2(this);
-
 		return ciudadanos2;
 	}
 
 	public Ciudadano removeCiudadanos2(Ciudadano ciudadanos2) {
 		getCiudadanos2().remove(ciudadanos2);
 		ciudadanos2.setDetallecatalogo2(null);
-
 		return ciudadanos2;
 	}
 
@@ -159,14 +154,12 @@ public class Detallecatalogo implements Serializable {
 	public Ciudadano addCiudadanos3(Ciudadano ciudadanos3) {
 		getCiudadanos3().add(ciudadanos3);
 		ciudadanos3.setDetallecatalogo3(this);
-
 		return ciudadanos3;
 	}
 
 	public Ciudadano removeCiudadanos3(Ciudadano ciudadanos3) {
 		getCiudadanos3().remove(ciudadanos3);
 		ciudadanos3.setDetallecatalogo3(null);
-
 		return ciudadanos3;
 	}
 
@@ -181,14 +174,12 @@ public class Detallecatalogo implements Serializable {
 	public Ciudadano addCiudadanos4(Ciudadano ciudadanos4) {
 		getCiudadanos4().add(ciudadanos4);
 		ciudadanos4.setDetallecatalogo4(this);
-
 		return ciudadanos4;
 	}
 
 	public Ciudadano removeCiudadanos4(Ciudadano ciudadanos4) {
 		getCiudadanos4().remove(ciudadanos4);
 		ciudadanos4.setDetallecatalogo4(null);
-
 		return ciudadanos4;
 	}
 
@@ -211,14 +202,12 @@ public class Detallecatalogo implements Serializable {
 	public Vacuna addVacuna(Vacuna vacuna) {
 		getVacunas().add(vacuna);
 		vacuna.setDetallecatalogo(this);
-
 		return vacuna;
 	}
 
 	public Vacuna removeVacuna(Vacuna vacuna) {
 		getVacunas().remove(vacuna);
 		vacuna.setDetallecatalogo(null);
-
 		return vacuna;
 	}
 
@@ -233,7 +222,6 @@ public class Detallecatalogo implements Serializable {
 	public Detallevacuna addDetallevacuna(Detallevacuna detallevacuna) {
 		getDetallevacunas().add(detallevacuna);
 		detallevacuna.setDetallecatalogo(this);
-
 		return detallevacuna;
 	}
 

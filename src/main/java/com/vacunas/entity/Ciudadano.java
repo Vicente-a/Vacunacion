@@ -189,14 +189,12 @@ public class Ciudadano implements Serializable {
 	public Consulta addConsulta(Consulta consulta) {
 		getConsultas().add(consulta);
 		consulta.setCiudadano(this);
-
 		return consulta;
 	}
 
 	public Consulta removeConsulta(Consulta consulta) {
 		getConsultas().remove(consulta);
 		consulta.setCiudadano(null);
-
 		return consulta;
 	}
 

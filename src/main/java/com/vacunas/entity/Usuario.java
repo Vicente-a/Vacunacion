@@ -5,11 +5,11 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
 
-
 /**
  * The persistent class for the usuario database table.
  * 
  */
+
 @Entity
 @Table(name="usuario", schema = "vcnn")
 @NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
@@ -132,14 +132,12 @@ public class Usuario implements Serializable {
 	public Consulta addConsulta(Consulta consulta) {
 		getConsultas().add(consulta);
 		consulta.setUsuario(this);
-
 		return consulta;
 	}
 
 	public Consulta removeConsulta(Consulta consulta) {
 		getConsultas().remove(consulta);
 		consulta.setUsuario(null);
-
 		return consulta;
 	}
 
@@ -154,14 +152,12 @@ public class Usuario implements Serializable {
 	public Usuarioperfil addUsuarioperfil(Usuarioperfil usuarioperfil) {
 		getUsuarioperfils().add(usuarioperfil);
 		usuarioperfil.setUsuario(this);
-
 		return usuarioperfil;
 	}
 
 	public Usuarioperfil removeUsuarioperfil(Usuarioperfil usuarioperfil) {
 		getUsuarioperfils().remove(usuarioperfil);
 		usuarioperfil.setUsuario(null);
-
 		return usuarioperfil;
 	}
 
@@ -176,14 +172,12 @@ public class Usuario implements Serializable {
 	public Vacuna addVacuna(Vacuna vacuna) {
 		getVacunas().add(vacuna);
 		vacuna.setUsuario(this);
-
 		return vacuna;
 	}
 
 	public Vacuna removeVacuna(Vacuna vacuna) {
 		getVacunas().remove(vacuna);
 		vacuna.setUsuario(null);
-
 		return vacuna;
 	}
 

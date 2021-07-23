@@ -224,6 +224,12 @@ public class Detallecatalogo implements Serializable {
 		detallevacuna.setDetallecatalogo(this);
 		return detallevacuna;
 	}
+	public Detallevacuna removeDetallevacuna(Detallevacuna detallevacuna) {  //metodo para limpiar detalles de vacunacion
+		getDetallevacunas().remove(detallevacuna);
+		detallevacuna.setDetallecatalogo(null);
+
+		return detallevacuna;
+	}
 
 	
 
